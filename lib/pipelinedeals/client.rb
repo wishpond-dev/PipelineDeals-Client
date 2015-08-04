@@ -1,7 +1,8 @@
 require "pipelinedeals/client/version"
+require "httparty"
 
 module Pipelinedeals
-  module Client
+  class Client
     attr_reader :api_key
 
     API_URL = "https://api.pipelinedeals.com/api/v3/"
@@ -19,8 +20,8 @@ module Pipelinedeals
       get_request("users", "&page=#{page}")
     end
 
-    def custom_field_sets(page = 1)
-      get_request("custom_field_sets", "&page=#{page}")
+    def person_custom_fields(page = 1)
+      get_request("/admin/person_custom_field_labels", "&page=#{page}")
     end
 
     def people(page = 1)
@@ -34,7 +35,7 @@ module Pipelinedeals
     private
 
     def uri_generator(endpoint, options = "")
-      "#{API_URL}#{endpoint}.json?api_key=#{@token}#{options}"
+      "#{API_URL}#{endpoint}.json?api_key=#{@api_key}#{options}"
     end
 
     def get_request(endpoint, options = "")
@@ -45,7 +46,7 @@ module Pipelinedeals
     def post_request(data, endpoint, options = "")
      uri = uri_generator(endpoint, options)
      res = HTTParty.post(uri,
-        :query => data,
+        :body => data,
         :header => { "Content-type" => "text/json"})
      res.response
     end
