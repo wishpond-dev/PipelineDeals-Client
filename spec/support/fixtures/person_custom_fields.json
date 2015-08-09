@@ -1,0 +1,5 @@
+{"entries":
+  [{"created_at":"2015/08/05 16:33:11 -0700", "field_type":"numeric", "id":1109338, "is_required":false, "name":"age", "updated_at":"2015/08/05 16:33:11 -0700"},
+   {"created_at":"2015/08/05 16:33:22 -0700", "field_type":"text", "id":1109341, "is_required":false, "name":"fav_pokemon", "updated_at":"2015/08/05 16:33:22 -0700"},
+   {"created_at":"2015/08/05 16:33:50 -0700", "field_type":"text", "id":1109344, "is_required":false, "name":"nickname", "updated_at":"2015/08/05 16:33:50 -0700"}],
+ "pagination":{"page":1, "page_var":"page", "per_page":200, "pages":1, "total":3}}

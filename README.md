@@ -2,7 +2,7 @@
 
 This gem is designed to communicate with the *Pipeline Deals API*
 through instantiation of the main class **PipelineDeals::Client**.
-To instantiate you need the api key from a Pipeline Deals account.
+To instantiate you need the API key from a Pipeline Deals account.
 
 This Gem supports the following **Pipeline Deals API** methods:
 
