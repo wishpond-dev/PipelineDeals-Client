@@ -59,7 +59,7 @@ module Pipelinedeals
       uri = uri_generator(endpoint, options)
       res = HTTParty.put(uri,
         :body => data,
-        :headers => { "Content-type" => "text/json" })
+        :header => { "Content-type" => "text/json" })
       res.response
     end
   end
