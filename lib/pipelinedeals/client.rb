@@ -32,6 +32,10 @@ module Pipelinedeals
       post_request(data, endpoint)
     end
 
+    def update_person(data, id, options = "")
+      put_request(data, "people/#{id}", options)
+    end
+
     private
 
     def uri_generator(endpoint, options = "")
@@ -49,6 +53,14 @@ module Pipelinedeals
         :body => data,
         :header => { "Content-type" => "text/json"})
      res.response
+    end
+
+    def put_request(data, endpoint, options = "")
+      uri = uri_generator(endpoint, options)
+      res = HTTParty.put(uri,
+        :body => data,
+        :headers => { "Content-type" => "text/json" })
+      res.response
     end
   end
 end
