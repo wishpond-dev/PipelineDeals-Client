@@ -13,7 +13,7 @@ module Pipelinedeals
 
     def ping
       response = users
-      !response.has_key?("error")
+      !response.has_key?("errors") && !response.has_key?("error")
     end
 
     def users(page = 1)
