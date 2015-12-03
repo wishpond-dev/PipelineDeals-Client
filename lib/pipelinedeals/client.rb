@@ -24,8 +24,8 @@ module Pipelinedeals
       get_request("/admin/person_custom_field_labels", "&page=#{page}")
     end
 
-    def people(page = 1)
-      get_request("people", "&page=#{page}")
+    def people(page = 1, per_page = 10000)
+      get_request("people", "&page=#{page}&per_page=#{per_page}")
     end
 
     def create_person(data, endpoint = "people")
